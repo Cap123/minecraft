@@ -105,6 +105,9 @@ public class GuiMultiplayer extends GuiScreen
     public void initGuiControls()
     {
         StringTranslate stringtranslate = StringTranslate.getInstance();
+        
+        controlList.add(new GuiButton(200, width/2 - 50, 10, 100, 20, "Proxy"));
+        
         controlList.add(buttonEdit = new GuiButton(7, width / 2 - 154, height - 28, 70, 20, stringtranslate.translateKey("selectServer.edit")));
         controlList.add(buttonDelete = new GuiButton(2, width / 2 - 74, height - 28, 70, 20, stringtranslate.translateKey("selectServer.delete")));
         controlList.add(buttonSelect = new GuiButton(1, width / 2 - 154, height - 52, 100, 20, stringtranslate.translateKey("selectServer.select")));
@@ -171,6 +174,10 @@ public class GuiMultiplayer extends GuiScreen
         if(guibutton.id == 8)
         {
             mc.displayGuiScreen(new GuiMultiplayer(parentScreen));
+        } else
+        if(guibutton.id == 200)
+        {
+            mc.displayGuiScreen(new GuiProxy(this));
         } else
         {
             serverSlotContainer.actionPerformed(guibutton);
