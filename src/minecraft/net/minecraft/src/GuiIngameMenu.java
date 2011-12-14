@@ -38,6 +38,7 @@ public class GuiIngameMenu extends GuiScreen
         controlList.add(new GuiButton(0, width / 2 - 100, height / 4 + 96 + byte0, "Options..."));
         controlList.add(new GuiButton(5, width / 2 - 100, height / 4 + 48 + byte0, 98, 20, StatCollector.translateToLocal("gui.achievements")));
         controlList.add(new GuiButton(6, width / 2 + 2, height / 4 + 48 + byte0, 98, 20, StatCollector.translateToLocal("gui.stats")));
+        controlList.add(new GuiButton(3, width / 2 - 100, height / 4 + 72 + byte0, "Texture Packs"));
     }
 
     protected void actionPerformed(GuiButton guibutton)
@@ -45,6 +46,10 @@ public class GuiIngameMenu extends GuiScreen
         if(guibutton.id == 0)
         {
             mc.displayGuiScreen(new GuiOptions(this, mc.gameSettings));
+        }
+        if(guibutton.id == 3)
+        {
+        	mc.displayGuiScreen(new GuiTexturePacks(this));
         }
         if(guibutton.id == 1)
         {
