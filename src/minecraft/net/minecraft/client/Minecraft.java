@@ -109,6 +109,8 @@ import net.minecraft.src.WorldInfo;
 import net.minecraft.src.WorldProvider;
 import net.minecraft.src.WorldRenderer;
 import net.minecraft.src.WorldSettings;
+import net.minecraft.src.powney;
+
 import org.lwjgl.LWJGLException;
 import org.lwjgl.input.Controllers;
 import org.lwjgl.input.Keyboard;
@@ -321,6 +323,15 @@ public abstract class Minecraft
         Keyboard.create();
         Mouse.create();
         mouseHelper = new MouseHelper(mcCanvas);
+        
+        powney.mc = this;
+        
+        ScaledResolution scaledresolution = new ScaledResolution(gameSettings, displayWidth, displayHeight);
+        int k = scaledresolution.getScaledWidth();
+        int l = scaledresolution.getScaledHeight();
+        
+        powney.boxu = k / 2 - 91;
+        powney.boxv = l - 39;
         try
         {
             Controllers.create();

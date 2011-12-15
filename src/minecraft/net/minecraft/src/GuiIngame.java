@@ -55,7 +55,8 @@ public class GuiIngame extends Gui
     	//Powney Config
     	if(mc.powneySettings.keyBindConfig.isPressed())
     	{
-    		mc.displayGuiScreen(new GuiPowneyConfig(mc.currentScreen, mc.powneySettings));
+    		//mc.displayGuiScreen(new GuiPowneyConfig(mc.currentScreen, mc.powneySettings));
+    		mc.displayGuiScreen(new GuiDrag(mc.currentScreen));
     	}
     	//End Powney Config
     	
@@ -103,6 +104,15 @@ public class GuiIngame extends Gui
         FontRenderer fontrenderer = mc.fontRenderer;
         mc.entityRenderer.setupOverlayRendering();
         GL11.glEnable(3042 /*GL_BLEND*/);
+        
+        
+        //Dragable Square
+        
+    	//GL11.glTranslatef(powney.boxu, powney.boxv, 0);
+    	//drawRect(0, 0, powney.boxwidth, powney.boxheight, 0xFF000000);
+    	//GL11.glTranslatef(-powney.boxu, -powney.boxv, 0);
+    	
+    	//Dragable Square
         if(Minecraft.isFancyGraphicsEnabled())
         {
             renderVignette(mc.thePlayer.getEntityBrightness(f), k, l);
@@ -201,8 +211,8 @@ public class GuiIngame extends Gui
                     {
                         k12 = 1;
                     }
-                    int j13 = k6 + l10 * 8;
-                    int k13 = k8;
+                    int j13 = k/2 -powney.boxu + l10 * 8;
+                    int k13 = l-powney.boxv;
                     if(i2 <= 4)
                     {
                         k13 += rand.nextInt(2);

@@ -31,7 +31,7 @@ public class GuiProxy extends GuiScreen {
 		Keyboard.enableRepeatEvents(true);
 		this.controlList.clear();
 		this.controlList.add(new GuiButton(0, width/2 -100, height / 4 + 92 + 12, "Set"));
-		this.controlList.add(new GuiButton(0, width/2 -100, height / 4 + 116 + 12, "Back"));
+		this.controlList.add(new GuiButton(1, width/2 -100, height / 4 + 116 + 12, "Back"));
 		this.serverTextField = new GuiTextField(this, this.fontRenderer, this.width / 2 - 100, this.height / 4 - 10 + 26 + 15, 200, 20, "");
 		this.serverTextField.isFocused = true;
 		this.serverTextField.setMaxStringLength(128);
